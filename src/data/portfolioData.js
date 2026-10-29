@@ -15,6 +15,8 @@ export const perfil = {
   email: "heraclidesefg@gmail.com",
 
   github: "https://github.com/heraclidesefg",
+
+  instagram: "https://www.instagram.com/hcm1978/"
 };
 
 export const habilidades = [

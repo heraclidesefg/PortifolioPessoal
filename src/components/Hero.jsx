@@ -11,9 +11,16 @@ export default function Hero({ perfil }) {
 
       <p className="hero-texto">{perfil.frase}</p>
 
+      <div className="botao-contato">
       <a className="botao" href="#projetos">
         Conheça meus projetos
       </a>
+
+      <a className="botao" href={perfil.instagram} target="_blank">
+        Instagram
+      </a>
+      </div>
+
     </section>
   );
 }
