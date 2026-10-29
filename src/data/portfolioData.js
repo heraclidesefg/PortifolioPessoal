@@ -75,4 +75,24 @@ export const projetos = [
     status: "Formação tecnológica Desenvolvimento Web e Mobile",
     link: "https://github.com/heraclidesefg/Projeto-smartTask",
   },
+   {
+    id: 5,
+    titulo: "Calculadora-Web",
+    descricao:
+      "Uma aplicação de calculadora web responsiva, desenvolvida utilizando HTML, CSS e JavaScript puro, com foco em simplicidade, usabilidade e organização de código",
+    categoria: "Projeto Educacional",
+    tecnologias: ["Html", "CSS", "JavaScript"],
+    status: "Projetos educacionais",
+    link: "https://github.com/heraclidesefg/Calculadora-Web",
+  },
+   {
+    id: 6,
+    titulo: "Relógio Web com alarme",
+    descricao:
+      "Exibir horas, minutos e segundos em tempo real Permitir definir e cancelar alarmes Mostrar contagem regressiva até o horário do alarme Tocar um som quando o alarme dispara Exibir um alerta visual com opção de abrir um vídeo no YouTube Reagendar automaticamente o alarme para o próximo dia",
+    categoria: "Full Stack",
+    tecnologias: ["Html", "CSS", "JavaScript", "DOM", "API"],
+    status: "Projetos educacionais",
+    link: "https://github.com/heraclidesefg/Rel-gio-web-com-Alarme",
+  },
 ];
