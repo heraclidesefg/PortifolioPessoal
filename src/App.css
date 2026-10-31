@@ -50,7 +50,7 @@
   padding: 80px 8%;
 
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
 
   align-items: center;
   gap: 40px;
@@ -69,9 +69,9 @@
 }
 
 .hero-foto {
-  width: 100%;
-  max-width: 360px;
-  height: 360px;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   justify-self: center;
   overflow: hidden;
  /* border: 3px solid #22d3ee;
@@ -83,8 +83,9 @@
 .hero-foto img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  display: block;
 }
 
 .sobretitulo {
@@ -97,7 +98,8 @@
 .hero h1 {
   font-size: clamp(36px, 6vw, 64px);
   line-height: 1.15;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .hero h2 {
@@ -353,9 +355,17 @@
   color: #22d3ee;
 }
 
+/* =====================================
+   RESPONSIVIDADE - TABLETS E CELULARES
+===================================== */
+
 @media (max-width: 760px) {
+
+  /* CABEÇALHO */
   .cabecalho {
     flex-direction: column;
+    padding: 18px 5%;
+    gap: 15px;
   }
 
   .cabecalho nav {
@@ -363,64 +373,17 @@
     gap: 12px 18px;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    padding: 55px 8%;
-  }
-
-  .hero-foto {
-    width: 100%;
-    max-width: 280px;
-    height: 280px;
-  }
-
-  botao-contato {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-   .botao {
-    width: fit-content;
-    max-width: 100%;
-    margin-top: 0;
-  }
-}
-
-  .lista-habilidades,
-  .lista-projetos {
-    grid-template-columns: 1fr;
-  }
-
-  .secao {
-    padding-top: 55px;
-    padding-bottom: 55px;
-  }
-
-  /* =================================
-   RESPONSIVIDADE PARA CELULARES
-================================= */
-
-@media (max-width: 760px) {
-
-  /* Apresentação principal */
+  /* APRESENTAÇÃO */
   .hero {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
     width: 100%;
     min-width: 0;
-
     padding: 50px 6%;
     gap: 30px;
   }
 
-  /* Conteúdo textual */
   .hero-conteudo {
     width: 100%;
     min-width: 0;
@@ -429,7 +392,6 @@
   .hero h1 {
     font-size: clamp(32px, 8vw, 44px);
     line-height: 1.2;
-
     overflow-wrap: break-word;
     word-break: normal;
   }
@@ -445,42 +407,106 @@
     line-height: 1.7;
   }
 
-  /* Botões */
+  /* BOTÕES DO HERO */
   .botao-contato {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     gap: 12px;
-
     width: 100%;
     margin-top: 22px;
   }
 
-   .botao {
+  .botao-contato .botao {
+    display: inline-flex;
     width: fit-content;
     max-width: 100%;
     margin: 0;
     padding: 12px 16px;
     font-size: 14px;
+    white-space: normal;
+    text-align: center;
   }
 
-  /* Fotografia */
+  /* FOTOGRAFIA */
   .hero-foto {
-    width: 100%;
-    max-width: 280px;
-    height: 280px;
+  width: min(75%, 280px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
 
-    margin: 0 auto;
-    justify-self: center;
+.hero-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
-    border-radius: 20px;
+  /* HABILIDADES E PROJETOS */
+  .lista-habilidades,
+  .lista-projetos {
+    grid-template-columns: 1fr;
   }
 
-  .hero-foto img {
+  /* SEÇÕES */
+  .secao {
+    padding: 55px 6%;
+  }
+
+  /* CONTATO */
+  .perfil-contato {
+    padding: 22px;
+  }
+
+  .contato-acoes {
+    flex-wrap: wrap;
+  }
+
+  /* RODAPÉ */
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* =====================================
+   CELULARES COM TELAS MAIS ESTREITAS
+===================================== */
+
+@media (max-width: 400px) {
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .botao-contato {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .botao-contato .botao {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+  }
+
+  .hero-foto {
+  width: min(80%, 240px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+  .cabecalho nav {
+    gap: 10px 14px;
   }
 }
