@@ -22,7 +22,7 @@ export default function Contact({ perfil }) {
 
         <p className="objetivo-contato">{perfil.objetivo}</p>
 
-        <div className="contato-acoes">
+        <div className="botao-contato">
           <a
             className="botao"
             href={`mailto:${perfil.email}`}
