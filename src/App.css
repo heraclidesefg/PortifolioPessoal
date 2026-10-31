@@ -364,10 +364,32 @@
   }
 
   .hero {
-    min-height: 390px;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 55px 8%;
   }
+
+  .hero-foto {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+  }
+
+  botao-contato {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+   .botao {
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 0;
+  }
+}
 
   .lista-habilidades,
   .lista-projetos {
